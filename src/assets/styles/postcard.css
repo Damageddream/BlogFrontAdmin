@@ -1,0 +1,21 @@
+.card {
+    max-width: 700px;
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(58, 139, 189);
+}
+
+.date {
+    font-size: 12px;
+    text-align: end;
+    color: rgb(106, 108, 109);
+}

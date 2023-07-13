@@ -1,0 +1,25 @@
+
+.comment {
+ background-color: rgb(226, 223, 223);
+ padding: 5px;
+ border-radius: 4px;
+ margin-bottom: 5px;
+}
+
+.timeC {
+    font-size: 12px;
+    text-align: end;
+    color: rgb(106, 108, 109);
+}
+
+.textC {
+    font-size: 20px;
+
+}
+
+.authorC {
+    font-size: 14px;
+    text-align: end;
+    color: rgb(72, 74, 75);
+    font-weight: 600;
+}
