@@ -27,7 +27,7 @@ const App: React.FC = () => {
   return (
     <div>
       <h1>My New Blog</h1>
-      
+
       <div className="postsList">
         {posts && posts.map((post) => (
           <PostCard
