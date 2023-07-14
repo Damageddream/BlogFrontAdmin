@@ -2,10 +2,10 @@ import "./App.css";
 import PostCard from "./components/PostCard";
 import IPost from "./interfaces/IPost";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useUser } from "./context/UserContext";
 
 const App: React.FC = () => {
-
+  const {user, setUser} = useUser()
   const [posts, setPosts ] = useState<IPost[]>()
   const getPosts = async () => {
     try {
@@ -27,7 +27,8 @@ const App: React.FC = () => {
   return (
     <div>
       <h1>My New Blog</h1>
-
+      <div>{user? "Hello Author!": <a href="/login">Log in</a>}</div>
+      
       <div className="postsList">
         {posts && posts.map((post) => (
           <PostCard
