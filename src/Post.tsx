@@ -1,10 +1,11 @@
 import IPost from "./interfaces/IPost";
 import IComment from "./interfaces/IComment";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import timeFromatter from "./utilities/timeformatter";
 import Comment from "./components/Comment";
 import './assets/styles/post.css';
+
 
 interface Params {
   id?: string;
@@ -62,7 +63,7 @@ const Post: React.FC = () => {
           <div className="dateP">Published: {timeFromatter(post.time)}</div>
         </div>
       )}
-      <a href="/">go back</a>
+      <Link to="/">go back</Link>
       {comments &&
         comments.map((comment) => {
           return (

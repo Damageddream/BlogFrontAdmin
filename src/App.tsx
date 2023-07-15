@@ -3,8 +3,11 @@ import PostCard from "./components/PostCard";
 import IPost from "./interfaces/IPost";
 import { useEffect, useState } from "react";
 import { useUser } from "./context/UserContext";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const App: React.FC = () => {
+  const navigate = useNavigate()
   const {user, setUser} = useUser()
   const [posts, setPosts ] = useState<IPost[]>()
   const getPosts = async () => {
@@ -17,6 +20,7 @@ const App: React.FC = () => {
     }
   };
 
+
   useEffect(() => {
     getPosts()
     .catch((err) => {
@@ -27,7 +31,8 @@ const App: React.FC = () => {
   return (
     <div>
       <h1>My New Blog</h1>
-      <div>{user? "Hello Author!": <a href="/login">Log in</a>}</div>
+      <div>{user? <div><p>"Hello Author!"</p> <a onClick={()=>{setUser(false)}}>Logout</a> </div>: <Link to='/login'>Log in</Link>}</div>
+      {user && <button onClick={()=>{navigate('/addpost')}}>Add new post</button>}
       
       <div className="postsList">
         {posts && posts.map((post) => (
