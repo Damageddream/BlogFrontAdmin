@@ -4,6 +4,7 @@ interface IComment {
     author: string;
     post: string;
     _id: string;
+    onCommentDeleted: () => Promise<void>;
   }
   
   export default IComment;
